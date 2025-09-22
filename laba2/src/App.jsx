@@ -67,18 +67,14 @@ const users = [
 function App() {
     return (
         <div className="App">
-                <h1>Team Profiles</h1>
+            <h1>Team Profiles</h1>
             <main className="profiles-container">
                 {users.map(({id, name, role, avatarUrl}) => (
-                    <Profile
-                        name={name}
-                        role={role}
-                        avatarUrl={avatarUrl}
-                    />
+                    <Profile key={id} name={name} role={role} avatarUrl={avatarUrl}/>
                 ))}
             </main>
         </div>
     );
 }
 
-export default App
+export default App;

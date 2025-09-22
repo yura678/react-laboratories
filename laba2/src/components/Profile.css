@@ -1,12 +1,5 @@
-.profiles-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-
 .profile-card {
-    background: var(--card);
+    background: var(--bg);
     border-radius: 12px;
     padding: 24px;
     text-align: center;
