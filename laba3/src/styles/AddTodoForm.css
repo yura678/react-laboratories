@@ -1,0 +1,35 @@
+.todo-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text-color);
+    transition: border 0.2s, background 0.2s;
+}
+
+.todo-input:focus {
+    border-color: var(--button-bg);
+}
+
+.todo-add-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo-add-btn:hover {
+    background: var(--button-hover);
+}

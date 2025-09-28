@@ -1,0 +1,46 @@
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--todo-bg);
+    padding: 10px 12px;
+    border: 1px solid var(--todo-border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+    color: var(--text-color);
+}
+
+.todo:hover {
+    background: var(--todo-hover);
+}
+
+.todo.completed .todo-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+}
+
+.todo-text {
+    flex: 1;
+    margin-left: 10px;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.todo-delete-btn {
+    background: var(--delete-bg);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo-delete-btn:hover {
+    background: var(--delete-hover);
+}

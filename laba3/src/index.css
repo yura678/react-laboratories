@@ -1,0 +1,46 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  --card-bg: #ffffff;
+  --text-color: #213547;
+  --heading-color: #333;
+  --input-bg: #f9f9f9;
+  --input-border: #ddd;
+  --button-bg: #007bff;
+  --button-text: #fff;
+  --button-hover: #0056b3;
+  --todo-bg: #f9f9f9;
+  --todo-border: #eee;
+  --todo-hover: #f0f0f0;
+  --delete-bg: #dc3545;
+  --delete-hover: #a71d2a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1e1e1e;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --heading-color: #fff;
+    --input-bg: #2a2a2a;
+    --input-border: #444;
+    --button-bg: #3a6ff7;
+    --button-text: #fff;
+    --button-hover: #2552c4;
+    --todo-bg: #2a2a2a;
+    --todo-border: #444;
+    --todo-hover: #333;
+    --delete-bg: #e74c3c;
+    --delete-hover: #c0392b;
+  }
+}
+
