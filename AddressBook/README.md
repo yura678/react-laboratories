@@ -19,7 +19,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ![Component Tree + Data Flow](Blank%20diagram.svg)
 
-
 ## Використані патерни для таблиці
 
 ### 1. Компонентний патерн
