@@ -36,7 +36,8 @@ If you are developing a production application, we recommend using TypeScript wi
 ## TodoList (TodoList.jsx)
 - **Роль**: Батьківський компонент для списку задач і форми додавання.
 - **Функція**: Отримує і управляє todos, передає обробники додавання, видалення та оновлення задач дочірнім компонентам, відповідає за відображення відповідних станів (завантаження, помилки, список задач).
-- **State**: Отримує з хуку `useTodos`: todos, isLoading, error, deleteTodo, toggleTodo, addTodo.
+- **State**: Отримує з хуку `useTodos`: `todos`, `isLoading`, `error`, `deleteTodo`, `toggleTodo`, `addTodo`, `editTodo`, `currentPage`, `totalPages`,
+  `limitPerPage`, `goToNextPage`, `goToPrevPage`, `goToPage`, `setLimit`, `searchTerm`, `setSearchTerm`.
 - **Props**: Не має власних пропсів.
 
 ---
@@ -57,6 +58,14 @@ If you are developing a production application, we recommend using TypeScript wi
     - `todo` (об'єкт задачі),
     - `onDelete` (функція видалення),
     - `onUpdate` (функція зміни/оновлення задачі).
+
+---
+
+## Paginator (Paginator.jsx)
+- **Роль**: .
+- **Функція**: .
+- **State**: `pageInput`.
+- **Props**:`currentPage`,`totalPages`,`onNextPage`,`onPrevPage`, `limitPerPage`, `onSetLimit`, `onGoToPage` (і додаткові).
 
 ---
 
@@ -84,6 +93,22 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ---
 
+## Select (Select.jsx)
+- **Роль**: Компонент випадаючого списку (dropdown).
+- **Функція**: Дозволяє користувачу обирати один із кількох варіантів (наприклад, кількість задач на сторінку).
+- **State**: Немає.
+- **Props**: `value`, `onChange`, `placeholder`, `children` (і додаткові).
+
+---
+
+## TextArea (TextArea.jsx)
+- **Роль**: Компонент для введення багаторядкового тексту..
+- **Функція**: Використовується для введення довших описів або коментарів, аналогічний до Input, але з підтримкою кількох рядків.
+- **State**: Немає.
+- **Props**: `value`, `onChange`, `placeholder` (і додаткові).
+
+---
+
 ## Loader (Loader.jsx)
 - **Роль**: Компонент індикатора завантаження.
 - **Функція**: Просто показує спінер, коли йде завантаження.
@@ -97,3 +122,30 @@ If you are developing a production application, we recommend using TypeScript wi
 - **Функція**: Відображає текст з обраним HTML-тегом (напр. h1, p).
 - **State**: Немає.
 - **Props**: `variant`, `children` (і додаткові).
+
+## Використані патерни
+
+### 1. Компонентний патерн
+`TodoList` реалізовано через декомпозицію на окремі компоненти: `Paginator`, `SearchBar`, `AddTodoForm`, `TodoItem`, `Loader`. Кожен компонент відповідає за свою власну частину логіки та відображення.
+
+### 2. Розділення відповідальності (Separation of Concerns)
+Кожен компонент відповідає лише за одну задачу: `AddTodoForm` – додавання нового todo, 
+`SearchBar` – пошук, `Paginator` – відображення і керування серверною пагінацією, 
+`TodoItem` - відображення todo і його редагування, `Loader` - відображення завантажувача.
+
+### 3. Патерн візуалізації списку (List Rendering Pattern)
+Todo зберігаються як масив (todos), який ітерується через .map у `TodoList` для рендерингу todo за допомогою `TodoItem`.
+
+### 4. Контрольований компонент (Controlled Component)
+Редаговані поля (Input) у `TodoItem` та `AddTodoForm` управляються через React state.
+
+### 5. Ліфтинг стану (Lifting State Up)
+Стан, що використовується для управління todo (наприклад, додавання, редагування, видалення), підіймається до батьківських компонента `TodoList`.
+Тобто, компоненти-діти сповіщають батьків про зміни через callback-пропси (onAddTodo, onEdit, onDelete), і стан оновлюється у батьківському компоненті, що дозволяє узгоджено оновлювати дані додатку.
+
+### 6. Умовний рендеринг (Conditional Rendering)
+Використовується для показу `Loader`, при звертанні до API.
+
+### 7. Компоненти з розширюваними пропсами (Props Spreading/Composition Pattern)
+   Базові компоненти на кшталт `Button`, `Input`, `Typography` можуть отримувати й поширювати додаткові пропси (...props) для розширення функціоналу, що полегшує повторне використання та кастомізацію компонентів через композицію.
+***

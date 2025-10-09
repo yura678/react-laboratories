@@ -3,8 +3,8 @@
     margin: 40px auto;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     background: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     color: var(--text-color);
     transition: background 0.3s, color 0.3s;
 }
@@ -14,3 +14,21 @@
     padding: 0;
     margin: 0;
 }
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border 0.2s, background 0.2s;
+    margin-bottom: 20px;
+}
+
+.search-input:focus {
+    border-color: var(--button-bg);
+}
+
