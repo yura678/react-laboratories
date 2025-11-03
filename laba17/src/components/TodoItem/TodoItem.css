@@ -1,0 +1,106 @@
+.todo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--todo-bg);
+    padding: 10px 12px;
+    border: 1px solid var(--todo-border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+    color: var(--text-color);
+}
+
+.todo:hover {
+    background: var(--todo-hover);
+}
+
+.todo.completed .todo-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: revert;
+}
+
+.todo-delete-btn {
+    background: var(--delete-bg);
+    color: var(--button-text);
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo-delete-btn:hover {
+    background: var(--delete-hover);
+}
+
+.edit-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    margin: 0 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-edit-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--edit-bg);
+    color: var(--button-text);
+}
+
+.todo-edit-btn:hover {
+    background-color: var(--edit-hover);
+}
+
+.todo-save-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--success-bg);
+    color: var(--button-text);
+}
+
+.todo-save-btn:hover {
+    background-color: var(--success-hover);
+}
+
+.todo-save-btn:disabled {
+    background-color: var(--button-disabled-bg);
+    color: var(--button-disabled-text);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.todo-cancel-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--cancel-bg);
+    color: var(--button-text);
+}
+
+.todo-cancel-btn:hover {
+    background-color: var(--cancel-hover);
+}
+
+

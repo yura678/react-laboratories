@@ -1,0 +1,89 @@
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+    border-top: 1px solid var(--input-border);
+}
+
+.paginator_navigation {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.paginator_info {
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.paginator_actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+
+.paginator_perPage, .paginator_form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paginator_label {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.paginator_select {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+}
+
+.paginator_select:focus {
+    border-color: var(--button-bg);
+}
+
+.paginator_input {
+    width: 60px;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    outline: none;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+}
+
+.paginator_input:focus {
+    border-color: var(--button-bg);
+}
+
+.paginator_button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.2s ease;
+}
+
+.paginator_button:hover {
+    background-color: var(--button-hover);
+}
+
+.paginator_button:disabled {
+    background-color: var(--button-disabled-bg);
+    color: var(--button-disabled-text);
+    cursor: not-allowed;
+}
